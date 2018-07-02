@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Programmer : Arman Imani                                                %
+% Programmer : Arman Imani 91207404                                       %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % This program is capable of generating nanotubes based on chiral         %
 % coordination . The chiral coordinate defines by two vecrots m , n . The %
@@ -30,7 +30,7 @@ counter=1;
 check=1;
 y_temp=-bl/2;
 %......................Generating graphene plane...........................
-for j=0:5*round(l/bl)
+for j=0:5*round(l/bl);
     if (check==3)
         xo=a/2;
         check=check+1;
@@ -48,7 +48,7 @@ for j=0:5*round(l/bl)
         check=check+1;
         y_temp=y_temp+bl/2;
     end
-    for i=-5*round(l/a):5*round(l/a)
+    for i=-5*round(l/a):5*round(l/a);
         x=xo+i*a;
         y=y_temp;
         R=[x;y];
@@ -123,7 +123,7 @@ counter=1;
             Bond_data(counter,2)=i;
             Bond_data(counter,3)=j;
             counter=counter+1;
-            line([x,xx],[y,yy],[z,zz],'Color','r','LineWidth',3)
+            line([x,xx],[y,yy],[z,zz],'Color','r','LineWidth',1)
          end
      end
  end
@@ -134,5 +134,5 @@ fid1=fopen('Atom_data.txt','wt');
 fid2=fopen('Bond_data.txt','wt');
 fprintf(fid1,'Atom_number     X(nm)     Y(nm)     Z(nm)     \n');
 fprintf(fid2,'Bond_number      Atom1      Atom2     \n');
-fprintf(fid1,'%d,%15.10f,%15.10f,%15.10f\n',Atom_data);
-fprintf(fid2,'%d,%d,%d\n',Bond_data);
+fprintf(fid1,'%d  %15.10f  %15.10f  %15.10f  \n',Atom_data);
+fprintf(fid2,'%d  %d  %d  \n',Bond_data);
